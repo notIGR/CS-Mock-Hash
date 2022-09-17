@@ -37,14 +37,14 @@ checkPassword = async (username, plaintextPassword) => {
 }
 
 hashPassword = async (username, password) => {
-    // TODO: Make sure to delete this console.log once you're done implementing the function!
-    console.log('\nUh-oh, hashPassword is not yet implemented. 😢')
 
     // TODO: Make the password hash using bcrypt
+    const passwordHash = await bcrypt.hash(password, 12);
 
     // TODO: Add the user and password hash to the global store object
-
+    globalStore[username] = passwordHash;
     // TODO: Print a status update including the username and password hash
+    console.log('added user password hash top global store user');
 }
 
 
